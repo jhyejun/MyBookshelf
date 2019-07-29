@@ -46,10 +46,10 @@
             </objects>
             <point key="canvasLocation" x="2594" y="-596"/>
         </scene>
-        <!--View Controller-->
+        <!--Detail Book View Controller-->
         <scene sceneID="nuo-MF-KAQ">
             <objects>
-                <viewController id="ia2-w3-vqa" sceneMemberID="viewController">
+                <viewController id="ia2-w3-vqa" customClass="DetailBookViewController" customModule="MyBookshelf" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="aQ0-Ei-MXN">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -137,10 +137,10 @@
             </objects>
             <point key="canvasLocation" x="1498.5507246376812" y="481.47321428571428"/>
         </scene>
-        <!--View Controller-->
+        <!--Detail Book View Controller-->
         <scene sceneID="4vk-AF-QYS">
             <objects>
-                <viewController id="cNq-CA-oq0" sceneMemberID="viewController">
+                <viewController id="cNq-CA-oq0" customClass="DetailBookViewController" customModule="MyBookshelf" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="xr0-ln-3X7">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
