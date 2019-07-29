@@ -1,0 +1,6 @@
+framework module Pods_MyBookshelf {
+  umbrella header "Pods-MyBookshelf-umbrella.h"
+
+  export *
+  module * { export * }
+}

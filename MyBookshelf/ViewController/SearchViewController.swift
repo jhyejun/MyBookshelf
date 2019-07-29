@@ -1,20 +1,16 @@
 //
-//  ViewController.swift
+//  SearchViewController.swift
 //  MyBookshelf
 //
 //  Created by 장혜준 on 29/07/2019.
 //  Copyright © 2019 장혜준. All rights reserved.
 //
 
+import Foundation
 import UIKit
 
-class ViewController: UIViewController {
-
+class SearchViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view.
     }
-
-
 }
-
