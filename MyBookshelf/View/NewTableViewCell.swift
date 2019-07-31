@@ -32,8 +32,8 @@ class NewTableViewCell: UITableViewCell {
     }
     
     // MARK: - Initialize
-    init() {
-        super.init(style: .default, reuseIdentifier: "NewTableViewCell")
+    override init(style: UITableViewCell.CellStyle = .default, reuseIdentifier: String? = NewTableViewCell.reuseIdentifierName) {
+        super.init(style: style, reuseIdentifier: reuseIdentifier)
     }
     
     required init?(coder aDecoder: NSCoder) {

@@ -16,6 +16,8 @@ class NewViewController: UIViewController {
     // MARK: - View LifeCycle Method
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        tableView.register(NewTableViewCell.self, forCellReuseIdentifier: NewTableViewCell.reuseIdentifierName)
     }
 }
 
@@ -29,7 +31,7 @@ extension NewViewController: UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        guard let cell: NewTableViewCell = NewTableViewCell() else {
+        guard let cell: NewTableViewCell = tableView.dequeueReusableCell(withIdentifier: NewTableViewCell.reuseIdentifierName) as? NewTableViewCell else {
             preconditionFailure("NewTableViewCell is nil")
         }
         
