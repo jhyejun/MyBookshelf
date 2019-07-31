@@ -15,6 +15,9 @@
 		CB29F2E122F1233800FA341D /* UIViewController+ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB29F2DB22F1233800FA341D /* UIViewController+ext.swift */; };
 		CB29F2E222F1233800FA341D /* UITextField+ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB29F2DC22F1233800FA341D /* UITextField+ext.swift */; };
 		CB29F2E322F1233800FA341D /* UIView+ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB29F2DD22F1233800FA341D /* UIView+ext.swift */; };
+		CB29F2E922F1330F00FA341D /* NetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB29F2E822F1330F00FA341D /* NetworkManager.swift */; };
+		CB29F2F122F164CF00FA341D /* ITBook.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB29F2F022F164CF00FA341D /* ITBook.swift */; };
+		CB29F2F622F17DBC00FA341D /* ITBookRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB29F2F522F17DBC00FA341D /* ITBookRequest.swift */; };
 		CBB7FEAF22EED76000B7AE89 /* NewBooks.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBB7FEAE22EED76000B7AE89 /* NewBooks.swift */; };
 		CBB7FEB122EED79200B7AE89 /* Book.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBB7FEB022EED79200B7AE89 /* Book.swift */; };
 		CBB7FEB522EEE88600B7AE89 /* Protocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBB7FEB422EEE88600B7AE89 /* Protocol.swift */; };
@@ -39,6 +42,9 @@
 		CB29F2DB22F1233800FA341D /* UIViewController+ext.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIViewController+ext.swift"; sourceTree = "<group>"; };
 		CB29F2DC22F1233800FA341D /* UITextField+ext.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UITextField+ext.swift"; sourceTree = "<group>"; };
 		CB29F2DD22F1233800FA341D /* UIView+ext.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIView+ext.swift"; sourceTree = "<group>"; };
+		CB29F2E822F1330F00FA341D /* NetworkManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkManager.swift; sourceTree = "<group>"; };
+		CB29F2F022F164CF00FA341D /* ITBook.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ITBook.swift; sourceTree = "<group>"; };
+		CB29F2F522F17DBC00FA341D /* ITBookRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ITBookRequest.swift; sourceTree = "<group>"; };
 		CBB7FEAE22EED76000B7AE89 /* NewBooks.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewBooks.swift; sourceTree = "<group>"; };
 		CBB7FEB022EED79200B7AE89 /* Book.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Book.swift; sourceTree = "<group>"; };
 		CBB7FEB422EEE88600B7AE89 /* Protocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Protocol.swift; sourceTree = "<group>"; };
@@ -105,6 +111,41 @@
 			path = Global;
 			sourceTree = "<group>";
 		};
+		CB29F2E722F132A300FA341D /* Manager */ = {
+			isa = PBXGroup;
+			children = (
+				CB29F2E822F1330F00FA341D /* NetworkManager.swift */,
+			);
+			path = Manager;
+			sourceTree = "<group>";
+		};
+		CB29F2F222F17D5800FA341D /* ITBook */ = {
+			isa = PBXGroup;
+			children = (
+				CB29F2F022F164CF00FA341D /* ITBook.swift */,
+				CB29F2F422F17DA700FA341D /* Request */,
+				CB29F2F322F17D9700FA341D /* Response */,
+			);
+			path = ITBook;
+			sourceTree = "<group>";
+		};
+		CB29F2F322F17D9700FA341D /* Response */ = {
+			isa = PBXGroup;
+			children = (
+				CBB7FEB022EED79200B7AE89 /* Book.swift */,
+				CBB7FEAE22EED76000B7AE89 /* NewBooks.swift */,
+			);
+			path = Response;
+			sourceTree = "<group>";
+		};
+		CB29F2F422F17DA700FA341D /* Request */ = {
+			isa = PBXGroup;
+			children = (
+				CB29F2F522F17DBC00FA341D /* ITBookRequest.swift */,
+			);
+			path = Request;
+			sourceTree = "<group>";
+		};
 		CBB7FEAB22EED06900B7AE89 /* Base */ = {
 			isa = PBXGroup;
 			children = (
@@ -128,8 +169,7 @@
 		CBB7FEAD22EED54600B7AE89 /* Model */ = {
 			isa = PBXGroup;
 			children = (
-				CBB7FEAE22EED76000B7AE89 /* NewBooks.swift */,
-				CBB7FEB022EED79200B7AE89 /* Book.swift */,
+				CB29F2F222F17D5800FA341D /* ITBook */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -161,6 +201,7 @@
 				CBB7FEAC22EED0A200B7AE89 /* View */,
 				CBB7FEAD22EED54600B7AE89 /* Model */,
 				CB29F2D722F1231400FA341D /* Extension */,
+				CB29F2E722F132A300FA341D /* Manager */,
 			);
 			path = MyBookshelf;
 			sourceTree = "<group>";
@@ -294,6 +335,7 @@
 				CB29F2E222F1233800FA341D /* UITextField+ext.swift in Sources */,
 				CB29F2DE22F1233800FA341D /* NSObject+ext.swift in Sources */,
 				CB29F2DF22F1233800FA341D /* Collection+ext.swift in Sources */,
+				CB29F2E922F1330F00FA341D /* NetworkManager.swift in Sources */,
 				CBB7FEAF22EED76000B7AE89 /* NewBooks.swift in Sources */,
 				CB29F2D622F1230100FA341D /* Log.swift in Sources */,
 				CB29F2E122F1233800FA341D /* UIViewController+ext.swift in Sources */,
@@ -302,6 +344,8 @@
 				CB29F2E322F1233800FA341D /* UIView+ext.swift in Sources */,
 				CBB7FEB522EEE88600B7AE89 /* Protocol.swift in Sources */,
 				CBE2955522EE830C0093BD00 /* AppDelegate.swift in Sources */,
+				CB29F2F622F17DBC00FA341D /* ITBookRequest.swift in Sources */,
+				CB29F2F122F164CF00FA341D /* ITBook.swift in Sources */,
 				CBE2956E22EEC79D0093BD00 /* NewTableViewCell.swift in Sources */,
 				CBB7FEB722EEEBBD00B7AE89 /* DetailBookViewController.swift in Sources */,
 				CBE2956722EE94390093BD00 /* NewViewController.swift in Sources */,

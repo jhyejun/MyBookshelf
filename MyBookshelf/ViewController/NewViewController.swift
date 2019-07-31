@@ -18,6 +18,16 @@ class NewViewController: UIViewController {
         super.viewDidLoad()
         
         tableView.register(NewTableViewCell.self, forCellReuseIdentifier: NewTableViewCell.reuseIdentifierName)
+        
+        itBookRequest().new { result in
+            switch result {
+            case .success(let data):
+                DEBUG_LOG(data)
+                
+            case .failure(let error):
+                ERROR_LOG(error)
+            }
+        }
     }
 }
 
