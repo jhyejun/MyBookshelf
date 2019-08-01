@@ -13,16 +13,20 @@ class NewViewController: UIViewController {
     // MARK: - UI Property
     @IBOutlet weak var tableView: UITableView!
     
+    // MARK: - Data Property
+    private var data: NewBooks?
+    
     // MARK: - View LifeCycle Method
     override func viewDidLoad() {
         super.viewDidLoad()
         
         tableView.register(NewTableViewCell.self, forCellReuseIdentifier: NewTableViewCell.reuseIdentifierName)
         
-        itBookRequest().new { result in
+        itBookRequest().new { [weak self] result in
             switch result {
             case .success(let data):
-                DEBUG_LOG(data)
+                self?.data = data
+                self?.tableView.reloadData()
                 
             case .failure(let error):
                 ERROR_LOG(error)
@@ -37,7 +41,7 @@ extension NewViewController: UITableViewDelegate {
 
 extension NewViewController: UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 10
+        return data?.books.count ?? 0
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
@@ -45,6 +49,14 @@ extension NewViewController: UITableViewDataSource {
             preconditionFailure("NewTableViewCell is nil")
         }
         
+        if let data = data?.books[safe: indexPath.row] {
+            cell.update(data: data)
+        }
+        
         return cell
+    }
+    
+    func tableView(_ tableView: UITableView, viewForFooterInSection section: Int) -> UIView? {
+        return UIView()
     }
 }

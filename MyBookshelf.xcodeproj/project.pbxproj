@@ -200,8 +200,8 @@
 				CBE2956822EE943D0093BD00 /* ViewController */,
 				CBB7FEAC22EED0A200B7AE89 /* View */,
 				CBB7FEAD22EED54600B7AE89 /* Model */,
-				CB29F2D722F1231400FA341D /* Extension */,
 				CB29F2E722F132A300FA341D /* Manager */,
+				CB29F2D722F1231400FA341D /* Extension */,
 			);
 			path = MyBookshelf;
 			sourceTree = "<group>";

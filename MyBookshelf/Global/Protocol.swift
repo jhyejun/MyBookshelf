@@ -13,3 +13,7 @@ protocol Updatable {
     
     func update(data: T)
 }
+
+protocol PrepareLayout {
+    
+}

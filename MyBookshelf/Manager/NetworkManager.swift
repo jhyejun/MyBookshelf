@@ -79,6 +79,26 @@ class NetworkManager {
                 }
         }
     }
+    
+    func requestJSON(_ request: AFRequest, completion: @escaping (Result<Any, Error>) -> Void) {
+        AF.request(request.url,
+                   method: request.method,
+                   parameters: request.parameters,
+                   encoding: request.encoding,
+                   headers: request.headers,
+                   interceptor: request.interceptor)
+            .responseJSON { (resp) in
+                switch resp.result {
+                case .success(let data):
+                    DEBUG_LOG(data)
+                    completion(.success(data))
+                    
+                case .failure(let error):
+                    ERROR_LOG(error)
+                    completion(.failure(error))
+                }
+        }
+    }
 }
 
 func networkManager() -> NetworkManager {

@@ -9,6 +9,7 @@
 import Foundation
 import UIKit
 import Then
+import SnapKit
 
 class NewTableViewCell: UITableViewCell {
     // MARK: - UI Property
@@ -38,6 +39,29 @@ class NewTableViewCell: UITableViewCell {
     
     required init?(coder aDecoder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
+    }
+    
+    func setViewLayout() {
+        let views: [UIView] = [coverImageView, titleLabel, subTitleLabel, isbnLabel, priceLabel, urlButton]
+        addSubViews(views)
+    }
+    
+    func setViewConstraints() {
+        coverImageView.snp.makeConstraints { make in
+            make.top.leading.bottom.equalToSuperview().inset(10)
+            make.size.equalTo(75)
+        }
+        
+        titleLabel.snp.makeConstraints { make in
+            make.top.equalToSuperview().inset(10)
+            make.leading.lessThanOrEqualTo(coverImageView.snp.trailing).offset(10)
+            make.trailing.equalToSuperview().inset(10)
+        }
+        
+        subTitleLabel.snp.makeConstraints { make in
+            make.top.equalTo(titleLabel.snp.bottom).offset(5)
+            make.leading.trailing.equalTo(titleLabel)
+        }
     }
 }
 

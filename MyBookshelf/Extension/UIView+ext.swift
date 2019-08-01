@@ -10,6 +10,12 @@ import Foundation
 import UIKit
 
 extension UIView {
+    func addSubViews(_ views: [UIView]) {
+        views.forEach {
+            self.addSubview($0)
+        }
+    }
+    
     func setCornerRadius(_ radius: CGFloat, mask: CACornerMask? = nil) {
         layer.cornerRadius = radius
         layer.masksToBounds = true

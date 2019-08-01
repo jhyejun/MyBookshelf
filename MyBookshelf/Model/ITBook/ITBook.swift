@@ -16,18 +16,18 @@ enum ITBook: NetworkRequest {
 
 extension ITBook {
     private var baseUrl: String {
-        return "https://api.itbook.store/1.0/"
+        return "https://api.itbook.store/1.0"
     }
     private var path: String {
         switch self {
         case .new:
-            return "new/"
+            return "/new"
             
         case .search:
-            return "search/"
+            return "/search"
             
         case .detailBook:
-            return "books/"
+            return "/books"
         }
     }
     private var defaultUrl: String {
@@ -42,13 +42,13 @@ extension ITBook {
             
         case .search(let query, let page):
             if let page = page {
-                return defaultUrl + "\(query)/\(page)/"
+                return defaultUrl + "/\(query)/\(page)"
             } else {
-                return defaultUrl + "\(query)/"
+                return defaultUrl + "/\(query)"
             }
             
         case .detailBook(let isbn):
-            return defaultUrl + "\(isbn)/"
+            return defaultUrl + "/\(isbn)"
         }
     }
 }
