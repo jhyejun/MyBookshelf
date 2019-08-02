@@ -15,5 +15,6 @@ protocol Updatable {
 }
 
 protocol PrepareLayout {
-    
+    func setViews()
+    func setViewConstraints()
 }

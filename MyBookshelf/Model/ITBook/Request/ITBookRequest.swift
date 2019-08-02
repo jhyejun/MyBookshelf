@@ -11,10 +11,12 @@ import Foundation
 class ITBookRequest {
     fileprivate static let shared: ITBookRequest = ITBookRequest()
     
-    func new(completion: @escaping (Result<NewBooks, Error>) -> Void) {
+    func new(wait: () -> Void, finish: @escaping () -> Void, completion: @escaping (Result<NewBooks, Error>) -> Void) {
         let request: AFRequest = AFRequest(request: ITBook.new, method: .get)
         
+        wait()
         networkManager().request(request) { result in
+            finish()
             switch result {
             case .success(let data):
                 do {
