@@ -6,7 +6,6 @@
 //  Copyright © 2019 장혜준. All rights reserved.
 //
 
-import Foundation
 import UIKit
 import Then
 import SnapKit
