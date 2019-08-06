@@ -50,7 +50,11 @@ class NewViewController: UIViewController {
 
 extension NewViewController: UITableViewDelegate {
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return UITableView.automaticDimension
+        if let books = data?.books, !books.isEmpty {
+            return UITableView.automaticDimension
+        } else {
+            return tableView.frame.height
+        }
     }
 
     func tableView(_ tableView: UITableView, estimatedHeightForRowAt indexPath: IndexPath) -> CGFloat {
