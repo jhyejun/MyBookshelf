@@ -9,6 +9,7 @@
 import UIKit
 import Then
 import SnapKit
+import Kingfisher
 
 class NewTableViewCell: UITableViewCell, PrepareLayout {
     // MARK: - UI Property
@@ -92,7 +93,7 @@ extension NewTableViewCell: Updatable {
     typealias T = Book
 
     func update(data: Book) {
-//        coverImageView.image = UIImage(named: data.image)
+        coverImageView.kf.setImage(with: URL(string: data.image))
         titleLabel.text = data.title
         subTitleLabel.text = data.subtitle
         isbnLabel.text = data.isbn13

@@ -13,7 +13,7 @@ target 'MyBookshelf' do
   pod 'SwiftyJSON', '~> 4.0'
   
   # Network Image Library
-  # pod 'Kingfisher', '~> 5.0'
+  pod 'Kingfisher', '~> 5.0'
 
   # UI Library
   pod 'SnapKit', '~> 4.0.0'
