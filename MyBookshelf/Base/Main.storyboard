@@ -34,40 +34,25 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
-                            <constraint firstItem="49A-oI-Gsk" firstAttribute="trailing" secondItem="h7M-tN-I3m" secondAttribute="trailing" id="CHG-0a-T5f"/>
-                            <constraint firstItem="h7M-tN-I3m" firstAttribute="top" secondItem="49A-oI-Gsk" secondAttribute="top" id="SPQ-Ew-uDg"/>
-                            <constraint firstItem="h7M-tN-I3m" firstAttribute="leading" secondItem="49A-oI-Gsk" secondAttribute="leading" id="TtD-VD-B2a"/>
-                            <constraint firstItem="49A-oI-Gsk" firstAttribute="bottom" secondItem="h7M-tN-I3m" secondAttribute="bottom" id="fpd-m4-GhH"/>
+                            <constraint firstItem="49A-oI-Gsk" firstAttribute="trailing" secondItem="h7M-tN-I3m" secondAttribute="trailing" id="MMT-lH-Ire"/>
                             <constraint firstItem="Wrk-pl-ldX" firstAttribute="centerY" secondItem="IXk-Wk-7fu" secondAttribute="centerY" id="kkT-o0-I3J"/>
                             <constraint firstItem="Wrk-pl-ldX" firstAttribute="centerX" secondItem="IXk-Wk-7fu" secondAttribute="centerX" id="nDH-rB-fiW"/>
+                            <constraint firstItem="h7M-tN-I3m" firstAttribute="top" secondItem="49A-oI-Gsk" secondAttribute="top" id="qkG-ki-fun"/>
+                            <constraint firstItem="49A-oI-Gsk" firstAttribute="bottom" secondItem="h7M-tN-I3m" secondAttribute="bottom" id="ufL-RC-KWD"/>
+                            <constraint firstItem="h7M-tN-I3m" firstAttribute="leading" secondItem="49A-oI-Gsk" secondAttribute="leading" id="v87-PP-xYI"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="49A-oI-Gsk"/>
                     </view>
                     <navigationItem key="navigationItem" title="ITBook (New)" id="bAz-t9-cbD"/>
                     <connections>
-                        <outlet property="indicatorView" destination="Wrk-pl-ldX" id="KlF-Gg-J1w"/>
+                        <outlet property="indicatorView" destination="Wrk-pl-ldX" id="KMu-Ee-eHp"/>
                         <outlet property="tableView" destination="h7M-tN-I3m" id="U1f-he-7su"/>
-                        <segue destination="ia2-w3-vqa" kind="show" identifier="showDetailBook" id="Yt1-Wy-sRz"/>
+                        <segue destination="cNq-CA-oq0" kind="show" identifier="showDetailBook" id="QpE-z6-Oss"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="cX6-js-9EL" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2594" y="-596"/>
-        </scene>
-        <!--Detail Book View Controller-->
-        <scene sceneID="nuo-MF-KAQ">
-            <objects>
-                <viewController id="ia2-w3-vqa" customClass="DetailBookViewController" customModule="MyBookshelf" customModuleProvider="target" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="aQ0-Ei-MXN">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                        <viewLayoutGuide key="safeArea" id="KFp-ma-M21"/>
-                    </view>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="hzi-FU-rmL" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="3726" y="-597"/>
+            <point key="canvasLocation" x="2592.753623188406" y="-596.65178571428567"/>
         </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="K4p-Iy-T6f">
@@ -88,24 +73,65 @@
             </objects>
             <point key="canvasLocation" x="534.78260869565224" y="-27.455357142857142"/>
         </scene>
-        <!--Search View Controller-->
+        <!--ITBook (Search)-->
         <scene sceneID="Dni-1h-FMe">
             <objects>
                 <viewController id="uEK-65-xZl" customClass="SearchViewController" customModule="MyBookshelf" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="j7O-ce-o70">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="1cj-BF-reD">
+                                <rect key="frame" x="0.0" y="138" width="414" height="675"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <connections>
+                                    <outlet property="dataSource" destination="uEK-65-xZl" id="nsa-Gm-Owk"/>
+                                    <outlet property="delegate" destination="uEK-65-xZl" id="iBh-92-wdb"/>
+                                </connections>
+                            </tableView>
+                            <activityIndicatorView hidden="YES" opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" style="gray" translatesAutoresizingMaskIntoConstraints="NO" id="KEW-Yv-oG4">
+                                <rect key="frame" x="197" y="438" width="20" height="20"/>
+                                <color key="color" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            </activityIndicatorView>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Search Keyword" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="gCH-uy-ORb">
+                                <rect key="frame" x="0.0" y="88" width="414" height="50"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="50" id="LTY-YR-FJz"/>
+                                </constraints>
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <textInputTraits key="textInputTraits"/>
+                                <connections>
+                                    <action selector="textFieldDidChange:" destination="uEK-65-xZl" eventType="editingChanged" id="MHS-Gk-TSf"/>
+                                    <outlet property="delegate" destination="uEK-65-xZl" id="ejD-yF-2Ip"/>
+                                </connections>
+                            </textField>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="woq-gd-jL8" firstAttribute="trailing" secondItem="gCH-uy-ORb" secondAttribute="trailing" id="5Gy-7a-90q"/>
+                            <constraint firstItem="gCH-uy-ORb" firstAttribute="leading" secondItem="woq-gd-jL8" secondAttribute="leading" id="8XC-OS-Yve"/>
+                            <constraint firstItem="1cj-BF-reD" firstAttribute="top" secondItem="gCH-uy-ORb" secondAttribute="bottom" id="HIK-4z-rfd"/>
+                            <constraint firstItem="woq-gd-jL8" firstAttribute="trailing" secondItem="1cj-BF-reD" secondAttribute="trailing" id="YZL-Ws-jfE"/>
+                            <constraint firstItem="1cj-BF-reD" firstAttribute="bottom" secondItem="woq-gd-jL8" secondAttribute="bottom" id="fP7-iO-QjJ"/>
+                            <constraint firstItem="KEW-Yv-oG4" firstAttribute="centerY" secondItem="j7O-ce-o70" secondAttribute="centerY" id="hu6-6M-t5w"/>
+                            <constraint firstItem="gCH-uy-ORb" firstAttribute="top" secondItem="woq-gd-jL8" secondAttribute="top" id="luR-MX-ZzR"/>
+                            <constraint firstItem="KEW-Yv-oG4" firstAttribute="centerX" secondItem="j7O-ce-o70" secondAttribute="centerX" id="t5G-gG-1nc"/>
+                            <constraint firstItem="1cj-BF-reD" firstAttribute="leading" secondItem="woq-gd-jL8" secondAttribute="leading" id="xRg-Vn-c2X"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="woq-gd-jL8"/>
                     </view>
-                    <navigationItem key="navigationItem" id="oUp-Wc-iNR"/>
+                    <navigationItem key="navigationItem" title="ITBook (Search)" id="oUp-Wc-iNR"/>
                     <connections>
+                        <outlet property="indicatorView" destination="KEW-Yv-oG4" id="0wR-ff-ap7"/>
+                        <outlet property="searchTextField" destination="gCH-uy-ORb" id="7kx-pI-95Q"/>
+                        <outlet property="tableView" destination="1cj-BF-reD" id="0a4-pe-cXP"/>
                         <segue destination="cNq-CA-oq0" kind="show" identifier="showDetailBook" id="5qv-B0-ago"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="FZ1-wN-TX1" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2593" y="481"/>
+            <point key="canvasLocation" x="2592.753623188406" y="480.80357142857139"/>
         </scene>
         <!--New-->
         <scene sceneID="URq-cS-YwQ">
@@ -158,10 +184,13 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="62Q-FW-1gy" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3696" y="481"/>
+            <point key="canvasLocation" x="3597" y="-27"/>
         </scene>
     </scenes>
     <resources>
         <image name="ic-plus" width="32" height="32"/>
     </resources>
+    <inferredMetricsTieBreakers>
+        <segue reference="5qv-B0-ago"/>
+    </inferredMetricsTieBreakers>
 </document>

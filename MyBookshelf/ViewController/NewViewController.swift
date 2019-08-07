@@ -20,6 +20,8 @@ class NewViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        indicatorView.isHidden = true
+        
         tableView.separatorInset = .zero
         tableView.register(UINib(nibName: EmptyTableViewCell.className, bundle: nil), forCellReuseIdentifier: EmptyTableViewCell.reuseIdentifierName)
         tableView.register(NewTableViewCell.self, forCellReuseIdentifier: NewTableViewCell.reuseIdentifierName)

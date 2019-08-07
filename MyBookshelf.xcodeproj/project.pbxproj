@@ -20,6 +20,8 @@
 		CB29F2F622F17DBC00FA341D /* ITBookRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB29F2F522F17DBC00FA341D /* ITBookRequest.swift */; };
 		CB41375122F3DF60003DF272 /* EmptyTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB41374F22F3DF60003DF272 /* EmptyTableViewCell.swift */; };
 		CB41375222F3DF60003DF272 /* EmptyTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = CB41375022F3DF60003DF272 /* EmptyTableViewCell.xib */; };
+		CBA4173C22FA7A9D0007067D /* SearchTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBA4173B22FA7A9D0007067D /* SearchTableViewCell.swift */; };
+		CBA4173E22FA7BB60007067D /* SearchBooks.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBA4173D22FA7BB60007067D /* SearchBooks.swift */; };
 		CBB7FEAF22EED76000B7AE89 /* NewBooks.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBB7FEAE22EED76000B7AE89 /* NewBooks.swift */; };
 		CBB7FEB122EED79200B7AE89 /* Book.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBB7FEB022EED79200B7AE89 /* Book.swift */; };
 		CBB7FEB522EEE88600B7AE89 /* Protocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBB7FEB422EEE88600B7AE89 /* Protocol.swift */; };
@@ -49,6 +51,8 @@
 		CB29F2F522F17DBC00FA341D /* ITBookRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ITBookRequest.swift; sourceTree = "<group>"; };
 		CB41374F22F3DF60003DF272 /* EmptyTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmptyTableViewCell.swift; sourceTree = "<group>"; };
 		CB41375022F3DF60003DF272 /* EmptyTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = EmptyTableViewCell.xib; sourceTree = "<group>"; };
+		CBA4173B22FA7A9D0007067D /* SearchTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchTableViewCell.swift; sourceTree = "<group>"; };
+		CBA4173D22FA7BB60007067D /* SearchBooks.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchBooks.swift; sourceTree = "<group>"; };
 		CBB7FEAE22EED76000B7AE89 /* NewBooks.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewBooks.swift; sourceTree = "<group>"; };
 		CBB7FEB022EED79200B7AE89 /* Book.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Book.swift; sourceTree = "<group>"; };
 		CBB7FEB422EEE88600B7AE89 /* Protocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Protocol.swift; sourceTree = "<group>"; };
@@ -138,6 +142,7 @@
 			children = (
 				CBB7FEB022EED79200B7AE89 /* Book.swift */,
 				CBB7FEAE22EED76000B7AE89 /* NewBooks.swift */,
+				CBA4173D22FA7BB60007067D /* SearchBooks.swift */,
 			);
 			path = Response;
 			sourceTree = "<group>";
@@ -175,6 +180,7 @@
 			isa = PBXGroup;
 			children = (
 				CBE2956D22EEC79D0093BD00 /* NewTableViewCell.swift */,
+				CBA4173B22FA7A9D0007067D /* SearchTableViewCell.swift */,
 				CB41375322F3DF67003DF272 /* XIB */,
 			);
 			path = View;
@@ -352,9 +358,11 @@
 				CB29F2DF22F1233800FA341D /* Collection+ext.swift in Sources */,
 				CB29F2E922F1330F00FA341D /* NetworkManager.swift in Sources */,
 				CBB7FEAF22EED76000B7AE89 /* NewBooks.swift in Sources */,
+				CBA4173E22FA7BB60007067D /* SearchBooks.swift in Sources */,
 				CB29F2D622F1230100FA341D /* Log.swift in Sources */,
 				CB29F2E122F1233800FA341D /* UIViewController+ext.swift in Sources */,
 				CB29F2E022F1233800FA341D /* UIColor+ext.swift in Sources */,
+				CBA4173C22FA7A9D0007067D /* SearchTableViewCell.swift in Sources */,
 				CBB7FEB122EED79200B7AE89 /* Book.swift in Sources */,
 				CB29F2E322F1233800FA341D /* UIView+ext.swift in Sources */,
 				CBB7FEB522EEE88600B7AE89 /* Protocol.swift in Sources */,

@@ -33,6 +33,29 @@ class ITBookRequest {
             }
         }
     }
+    
+    func search(query: String, page: Int, wait: () -> Void, finish: @escaping () -> Void, completion: @escaping (Result<SearchBooks, Error>) -> Void) {
+        let request: AFRequest = AFRequest(request: ITBook.search(query: query, page: String(page)), method: .get)
+        
+        wait()
+        networkManager().request(request) { result in
+            finish()
+            switch result {
+            case .success(let data):
+                do {
+                    let respData: SearchBooks = try SearchBooks(data: data)
+                    completion(.success(respData))
+                } catch {
+                    ERROR_LOG(error.localizedDescription)
+                    completion(.failure(error))
+                }
+                
+            case .failure(let error):
+                ERROR_LOG(error.localizedDescription)
+                completion(.failure(error))
+            }
+        }
+    }
 }
 
 func itBookRequest() -> ITBookRequest {

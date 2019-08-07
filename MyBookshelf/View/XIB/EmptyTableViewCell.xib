@@ -12,7 +12,7 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
-        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" rowHeight="473" id="KGk-i7-Jjw" customClass="EmptyTableViewCell" customModule="MyBookshelf" customModuleProvider="target">
+        <tableViewCell contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" rowHeight="473" id="KGk-i7-Jjw" customClass="EmptyTableViewCell" customModule="MyBookshelf" customModuleProvider="target">
             <rect key="frame" x="0.0" y="0.0" width="374" height="473"/>
             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
             <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
@@ -20,7 +20,7 @@
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Empty" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="A2U-Hc-ZaB">
-                        <rect key="frame" x="162.5" y="226" width="49" height="21"/>
+                        <rect key="frame" x="162.5" y="107.5" width="49" height="21"/>
                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                         <color key="textColor" red="0.93345612287521362" green="0.21277901530265808" blue="0.15352803468704224" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <nil key="highlightedColor"/>
@@ -28,7 +28,7 @@
                 </subviews>
                 <constraints>
                     <constraint firstItem="A2U-Hc-ZaB" firstAttribute="centerX" secondItem="H2p-sc-9uM" secondAttribute="centerX" id="6jH-Gs-8Tb"/>
-                    <constraint firstItem="A2U-Hc-ZaB" firstAttribute="centerY" secondItem="H2p-sc-9uM" secondAttribute="centerY" id="fIl-n3-BMU"/>
+                    <constraint firstItem="A2U-Hc-ZaB" firstAttribute="centerY" secondItem="H2p-sc-9uM" secondAttribute="centerY" multiplier="1:2" id="fIl-n3-BMU"/>
                 </constraints>
             </tableViewCellContentView>
             <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
