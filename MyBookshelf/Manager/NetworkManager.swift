@@ -61,14 +61,18 @@ struct AFRequest {
 class NetworkManager {
     fileprivate static let shared = NetworkManager()
     
+    private init() { }
+    
     func request(_ request: AFRequest, completion: @escaping (Result<Data, Error>) -> Void) {
-        AF.request(request.url,
-                   method: request.method,
-                   parameters: request.parameters,
-                   encoding: request.encoding,
-                   headers: request.headers,
-                   interceptor: request.interceptor)
-            .responseData { (resp) in
+        let session: Session = Session.default
+        
+        do {
+            var urlRequest: URLRequest = try URLRequest(url: request.url, method: request.method, headers: request.headers)
+            urlRequest.cachePolicy = .returnCacheDataElseLoad
+            
+            let encodedURLRequest = try request.encoding.encode(urlRequest, with: request.parameters)
+            
+            session.request(encodedURLRequest, interceptor: request.interceptor).responseData { resp in
                 switch resp.result {
                 case .success(let data):
                     completion(.success(data))
@@ -77,17 +81,38 @@ class NetworkManager {
                     ERROR_LOG(error)
                     completion(.failure(error))
                 }
+            }
+        } catch {
+            ERROR_LOG(error.localizedDescription)
+            session.request(request.url,
+                                    method: request.method,
+                                    parameters: request.parameters,
+                                    encoding: request.encoding,
+                                    headers: request.headers,
+                                    interceptor: request.interceptor)
+                .responseData { (resp) in
+                    switch resp.result {
+                    case .success(let data):
+                        completion(.success(data))
+                        
+                    case .failure(let error):
+                        ERROR_LOG(error)
+                        completion(.failure(error))
+                    }
+            }
         }
     }
     
     func requestJSON(_ request: AFRequest, completion: @escaping (Result<Any, Error>) -> Void) {
-        AF.request(request.url,
-                   method: request.method,
-                   parameters: request.parameters,
-                   encoding: request.encoding,
-                   headers: request.headers,
-                   interceptor: request.interceptor)
-            .responseJSON { (resp) in
+        let session: Session = Session.default
+        
+        do {
+            var urlRequest: URLRequest = try URLRequest(url: request.url, method: request.method, headers: request.headers)
+            urlRequest.cachePolicy = .returnCacheDataElseLoad
+            
+            let encodedURLRequest = try request.encoding.encode(urlRequest, with: request.parameters)
+            
+            session.request(encodedURLRequest, interceptor: request.interceptor).responseJSON { resp in
                 switch resp.result {
                 case .success(let data):
                     DEBUG_LOG(data)
@@ -97,6 +122,26 @@ class NetworkManager {
                     ERROR_LOG(error)
                     completion(.failure(error))
                 }
+            }
+        } catch {
+            ERROR_LOG(error.localizedDescription)
+            session.request(request.url,
+                            method: request.method,
+                            parameters: request.parameters,
+                            encoding: request.encoding,
+                            headers: request.headers,
+                            interceptor: request.interceptor)
+                .responseJSON { (resp) in
+                    switch resp.result {
+                    case .success(let data):
+                        DEBUG_LOG(data)
+                        completion(.success(data))
+                        
+                    case .failure(let error):
+                        ERROR_LOG(error)
+                        completion(.failure(error))
+                    }
+            }
         }
     }
 }
