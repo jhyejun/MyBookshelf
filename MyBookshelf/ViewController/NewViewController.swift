@@ -13,7 +13,7 @@ class NewViewController: UIViewController {
     @IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var indicatorView: UIActivityIndicatorView!
     
-    // MARK: - Data Property
+    // MARK: - Used to Save Data Property
     private var data: NewBooks?
     
     // MARK: - View LifeCycle Method
@@ -48,6 +48,12 @@ class NewViewController: UIViewController {
             }
         }
     }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if let dest = segue.destination as? DetailBookViewController, let data = sender as? DetailBook {
+            dest.setDetailBookData(data)
+        }
+    }
 }
 
 extension NewViewController: UITableViewDelegate {
@@ -64,6 +70,20 @@ extension NewViewController: UITableViewDelegate {
             return 200
         } else {
             return tableView.frame.height
+        }
+    }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        if let isbn = data?.books[safe: indexPath.row]?.isbn13 {
+            itBookRequest().detail(isbn: isbn, wait: { }, finish: { }) { [weak self] result in
+                switch result {
+                case .success(let data):
+                    self?.performSegue(withIdentifier: "showDetailBook", sender: data)
+                    
+                case .failure(let error):
+                    ERROR_LOG(error)
+                }
+            }
         }
     }
 }

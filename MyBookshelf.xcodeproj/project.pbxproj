@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		4E6089648DD3E2E24617C42A /* Pods_MyBookshelf.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4389B41152C18588AFCA3E7B /* Pods_MyBookshelf.framework */; };
+		CB189E3C22FD1CCA009DD5FB /* DetailBook.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB189E3B22FD1CCA009DD5FB /* DetailBook.swift */; };
 		CB29F2D622F1230100FA341D /* Log.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB29F2D522F1230100FA341D /* Log.swift */; };
 		CB29F2DE22F1233800FA341D /* NSObject+ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB29F2D822F1233700FA341D /* NSObject+ext.swift */; };
 		CB29F2DF22F1233800FA341D /* Collection+ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB29F2D922F1233700FA341D /* Collection+ext.swift */; };
@@ -39,6 +40,7 @@
 		0D9EE453640BE392E6382843 /* Pods-MyBookshelf.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MyBookshelf.debug.xcconfig"; path = "Target Support Files/Pods-MyBookshelf/Pods-MyBookshelf.debug.xcconfig"; sourceTree = "<group>"; };
 		4389B41152C18588AFCA3E7B /* Pods_MyBookshelf.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MyBookshelf.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		B506930764C1279DB66BFAC7 /* Pods-MyBookshelf.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MyBookshelf.release.xcconfig"; path = "Target Support Files/Pods-MyBookshelf/Pods-MyBookshelf.release.xcconfig"; sourceTree = "<group>"; };
+		CB189E3B22FD1CCA009DD5FB /* DetailBook.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailBook.swift; sourceTree = "<group>"; };
 		CB29F2D522F1230100FA341D /* Log.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Log.swift; sourceTree = "<group>"; };
 		CB29F2D822F1233700FA341D /* NSObject+ext.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "NSObject+ext.swift"; sourceTree = "<group>"; };
 		CB29F2D922F1233700FA341D /* Collection+ext.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Collection+ext.swift"; sourceTree = "<group>"; };
@@ -143,6 +145,7 @@
 				CBB7FEB022EED79200B7AE89 /* Book.swift */,
 				CBB7FEAE22EED76000B7AE89 /* NewBooks.swift */,
 				CBA4173D22FA7BB60007067D /* SearchBooks.swift */,
+				CB189E3B22FD1CCA009DD5FB /* DetailBook.swift */,
 			);
 			path = Response;
 			sourceTree = "<group>";
@@ -367,6 +370,7 @@
 				CB29F2E322F1233800FA341D /* UIView+ext.swift in Sources */,
 				CBB7FEB522EEE88600B7AE89 /* Protocol.swift in Sources */,
 				CBE2955522EE830C0093BD00 /* AppDelegate.swift in Sources */,
+				CB189E3C22FD1CCA009DD5FB /* DetailBook.swift in Sources */,
 				CB29F2F622F17DBC00FA341D /* ITBookRequest.swift in Sources */,
 				CB29F2F122F164CF00FA341D /* ITBook.swift in Sources */,
 				CBE2956E22EEC79D0093BD00 /* NewTableViewCell.swift in Sources */,
