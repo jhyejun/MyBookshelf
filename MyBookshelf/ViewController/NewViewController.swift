@@ -81,6 +81,7 @@ extension NewViewController: UITableViewDelegate {
             }, finish: { [weak self] in
                 self?.indicatorView.stopAnimating()
                 self?.indicatorView.isHidden = true
+                sleep(UInt32(UInt(1)))
             }) { [weak self] result in
                 switch result {
                 case .success(let data):

@@ -9,7 +9,7 @@
 import Foundation
 
 struct SearchBooks: Codable {
-    let error, total, page: String
+    var error, total, page: String
     var books: [Book]
     
     enum CodingKeys: CodingKey {

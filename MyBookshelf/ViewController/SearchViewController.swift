@@ -98,7 +98,11 @@ class SearchViewController: UIViewController {
             switch result {
             case .success(let data):
                 self?.searchPage += 1
+                
+                self?.data?.error = data.error
+                self?.data?.page = data.page
                 self?.data?.books.append(contentsOf: data.books)
+                
                 self?.tableView.reloadData()
             case .failure(let error):
                 ERROR_LOG(error.localizedDescription)
