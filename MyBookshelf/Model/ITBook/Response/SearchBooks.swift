@@ -10,7 +10,7 @@ import Foundation
 
 struct SearchBooks: Codable {
     let error, total, page: String
-    let books: [Book]
+    var books: [Book]
     
     enum CodingKeys: CodingKey {
         case error, total, page
